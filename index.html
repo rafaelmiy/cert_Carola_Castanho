@@ -148,7 +148,7 @@
                 <h3>Certificamos que</h3>
                 <input class="name" id="name" type="text" placeholder="Nome" autocomplete="off"></input>
                 <span class="underline under-name"></span>
-                <h3>Participou do <b>curso de Auto Maquiagem</b> com carga horária de <input type="text" class="hours" placeholder="nº"></input> horas, <br>ministrado pela maquiadora Carola Castanho.</h3>
+                <h3>Participou do <b>curso de Auto Maquiagem</b> com carga horária de <input type="text" class="hours" id="hours" placeholder="nº"></input> horas, <br>ministrado pela maquiadora Carola Castanho.</h3>
                 <h4 class="date">São Paulo - SP, <input type="text" class="day" id="day" placeholder="dia" autocomplete="off"></input> de <input type="text" class="month" id="month" placeholder="mês" autocomplete="off"></input> de 2019</h4>
                 <!-- <input class="signature" type="text"></input> -->
                 <span class="signature underline"></span>
@@ -167,22 +167,23 @@
                 var name = document.getElementById("name").value.replace(/ /g,'');
                 document.title = "Certificado_"+name;
             });
-            window.addEventListener('load', myFunction, false )
-            // myFunction();
+            // window.addEventListener('load', myFunction, false )
+            myFunction();
 
             function myFunction() {
-            var name = prompt("Qual o nome da pessoa?", "");
-            var day = prompt("Qual foi o DIA do curso?", "");
-            var month = prompt("Qual foi o MÊS do curso?", "");
-            if (name == null || name == "") {
-                // txt = "User cancelled the prompt.";
-            } else {
-                // txt = "Hello " + person + "! How are you today?";
-                document.getElementById("name").value = name;
-                document.getElementById("day").value = day;
-                document.getElementById("month").value = month;
-            }
-                // document.getElementById("demo").innerHTML = txt;
+                var name = prompt("Qual o nome da pessoa?", "");
+                var hours = prompt("Qual a carga horária do curso?", "");
+                var day = prompt("Qual foi o DIA do curso?", "");
+                var month = prompt("Qual foi o MÊS do curso?", "");
+                if (name == null || name == "") {
+                    // txt = "User cancelled the prompt.";
+                }
+                else {
+                    document.getElementById("name").value = name;
+                    document.getElementById("hours").value = hours;
+                    document.getElementById("day").value = day;
+                    document.getElementById("month").value = month;
+                }
             }
         </script>
     </body>
