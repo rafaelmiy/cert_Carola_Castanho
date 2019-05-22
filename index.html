@@ -4,6 +4,7 @@
         <title>Certificado</title>
         <meta name="apple-mobile-web-app-capable" content="yes">
         <meta charset="utf-8" name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes|Julius+Sans+One|Roboto:300|Bad+Script|Poiret+One|Questrial|Quicksand|Raleway|Shadows+Into+Light&display=swap" rel="stylesheet">
         <style>
             :root {
                 --main-color: #000;
@@ -36,13 +37,14 @@
             h1,
             h3{
                 text-align: center;
+                font-family: Bad Script;
             }
             h1{
                 font-size: 9vw;
                 margin-top: 0;
                 text-transform: uppercase;
-                /* font-family: serif; */
                 color: var(--ter-color);
+                font-family: Julius Sans One;
             }
             h3{
                 font-size: 2.5vw;
@@ -91,12 +93,13 @@
                 text-align: right;
                 font-size: 2.5vw;
                 margin-top: 60px;
+                font-family: Roboto;
             }
             .date .day,
             .date .month{
                 font-size: 3.5vw;
                 text-align: center;
-                font-weight: bold;
+                /* font-weight: bold; */
             }
             .date .day{
                 width: 5vw;
@@ -171,10 +174,10 @@
             myFunction();
 
             function myFunction() {
-                var name = prompt("Qual o nome da pessoa?", "");
+                var name = prompt("Qual o NOME da pessoa?", "");
                 var hours = prompt("Qual a carga horária do curso?", "");
                 var day = prompt("Qual foi o DIA do curso?", "");
-                var month = prompt("Qual foi o MÊS do curso?", "");
+                var month = prompt("Qual foi o MÊS do curso? (Ex. Junho)", "");
                 if (name == null || name == "") {
                     // txt = "User cancelled the prompt.";
                 }
