@@ -140,6 +140,9 @@
             .under-name{
                 margin-top: -3.5vh;
             }
+            .hide{
+                display: none;
+            }
         </style>
     </head>
 
@@ -147,6 +150,7 @@
        
         <div>
             <section>
+                <p id="pdfName" class="hide"></p>
                 <h1>Certificado</h1>
                 <h3>Certificamos que</h3>
                 <input class="name" id="name" type="text" placeholder="Nome" autocomplete="off"></input>
@@ -166,16 +170,17 @@
 
             const input = document.getElementById('name');
 
-            input.addEventListener('keyup', function(){
+            document.addEventListener('keydown', function(){
                 var name = document.getElementById("name").value.replace(/ /g,'');
                 document.title = "Certificado_"+name;
+                document.getElementById('pdfName').innerHTML = "Certificado_"+name;
             });
             // window.addEventListener('load', myFunction, false )
             myFunction();
 
             function myFunction() {
                 var name = prompt("Qual o NOME da pessoa?", "");
-                var hours = prompt("Qual a carga horária do curso?", "");
+                var hours = prompt("Qual a CARGA HORÁRIA do curso?", "");
                 var day = prompt("Qual foi o DIA do curso?", "");
                 var month = prompt("Qual foi o MÊS do curso? (Ex. Junho)", "");
                 if (name == null || name == "") {
@@ -188,6 +193,22 @@
                     document.getElementById("month").value = month;
                 }
             }
+
+            var map = {}; // You could also use an array
+            onkeydown = onkeydown = function(e){
+                e = e || event; // to deal with IE
+                map[e.keyCode] = e.type == 'keydown';
+                console.log(map);
+                /* insert conditional here */
+                if(map[17] && map[13] || map[91] && map[13] || map[93] && map[13] || map[224] && map[13]){ // CTRL+ENTER
+                    map = {};
+                    print();
+                }
+            }
+            onkeyup = onkeyup = function(e){
+                map = {};
+            }
+            
         </script>
     </body>
 
